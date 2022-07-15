@@ -1,6 +1,8 @@
 import { useMutation } from 'react-query'
 import axios from 'axios'
 
+// 参考記事
+// http://www.code-magagine.com/?p=13565
 
 type Data = {
   userId: number
