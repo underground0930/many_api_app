@@ -32,6 +32,7 @@ export const usePostWorksPosts = () =>{
     onSuccess: (data) => {
       //
       console.log(data);
+      alert("success");
     },
     onError: () => {
       //
