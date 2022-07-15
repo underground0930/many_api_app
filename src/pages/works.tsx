@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
-
+import { Layout } from '../components/Layout'
 import Head from 'next/head'
 import { usePostWorksPosts } from '../hooks/works/usePostWorksPosts'
 
 const Works: NextPage = () => {
   const { mutate, isLoading } = usePostWorksPosts()
   return (
-    <div>
+    <Layout>
 
       {isLoading && <div>...loading</div>}
 
@@ -16,9 +16,9 @@ const Works: NextPage = () => {
           job: 'free',
           id: 88,
         })
-      }}>add</button>
+      }}>post data</button>
 
-    </div>
+    </Layout>
   )
 }
 

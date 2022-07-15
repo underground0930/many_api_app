@@ -1,17 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { Layout } from '../components/Layout'
 import { useFetchTopPosts } from '../hooks/top/useFetchTopPosts'
+import { usePersist } from '../hooks/utils/usePersist'
 
 const Example: NextPage = () => {
   const { data, error, isLoading } = useFetchTopPosts(3)
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Top</title>
       </Head>
 
       {isLoading && <div>loading...</div>}
       {error && <div>error</div>}
+      
+      
       {data && (
         <div>
           <p>
@@ -28,7 +32,7 @@ const Example: NextPage = () => {
           </p>
         </div>
       )}
-    </div>
+    </Layout>
   )
 }
 

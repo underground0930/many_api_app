@@ -32,7 +32,7 @@ export const usePostWorksPosts = () =>{
     onSuccess: (data) => {
       //
       console.log(data);
-      alert("success");
+      alert("post success");
     },
     onError: () => {
       //
