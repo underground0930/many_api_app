@@ -14,7 +14,7 @@ const Example: NextPage = () => {
       <Head>
         <title>Top</title>
       </Head>
-
+      <h1>TOP</h1>
       {isLoading && <div>loading...</div>}
       {error && <div>error</div>}
 

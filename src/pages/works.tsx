@@ -11,6 +11,8 @@ const Works: NextPage = () => {
   const { mutate, isLoading } = usePostWorksPosts()
   return (
     <Layout>
+      <h1>Works</h1>
+
       {isLoading && <div>...loading</div>}
 
       <button

@@ -5,27 +5,21 @@ import { useRecoilState } from 'recoil'
 // recoil サンプル
 // https://recoiljs.org/docs/guides/asynchronous-data-queries
 
-// atoms
-import { textState } from '../state/global/textState'
+// hooks
+import { UseUserState } from '../hooks/atoms/useUserState'
 
 // components
 import { Layout } from '../components/Layout'
 
 const RecoilTest: NextPage = () => {
-  const [text, setText] = useRecoilState(textState)
-
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value)
-  }
+  const [, setUser] = UseUserState()
 
   return (
     <Layout>
-      <h1>{text}</h1>
-      <div>
-        <input type="text" onChange={onChange} />
-      </div>
-
-      <button onClick={() => setText('hello')}>set text</button>
+      <h1>Recoil</h1>
+      <button onClick={() => setUser({ name: 'taro', userId: 1 })}>taro</button>
+      <button onClick={() => setUser({ name: 'jiro', userId: 2 })}>jiro</button>
+      <button onClick={() => setUser(null)}>reset</button>
     </Layout>
   )
 }
