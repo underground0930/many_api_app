@@ -1,6 +1,9 @@
 import type { NextPage } from 'next'
-import { useRecoilState } from 'recoil'
 import { ChangeEvent } from 'react'
+import { useRecoilState } from 'recoil'
+
+// recoil サンプル
+// https://recoiljs.org/docs/guides/asynchronous-data-queries
 
 // atoms
 import { textState } from '../state/global/textState'
@@ -8,7 +11,7 @@ import { textState } from '../state/global/textState'
 // components
 import { Layout } from '../components/Layout'
 
-const Test: NextPage = () => {
+const RecoilTest: NextPage = () => {
   const [text, setText] = useRecoilState(textState)
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -27,4 +30,4 @@ const Test: NextPage = () => {
   )
 }
 
-export default Test
+export default RecoilTest
